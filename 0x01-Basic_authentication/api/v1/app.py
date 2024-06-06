@@ -39,7 +39,6 @@ elif os.getenv("AUTH_TYPE") == "session_db_auth":
 def authentication():
     """Perform authentication checks before handling each request."""
     if auth:
-        request.current_user = auth.current_user(request)
         if auth.require_auth(request.path, ['/api/v1/status/',
                                             '/api/v1/unauthorized/',
                                             '/api/v1/forbidden/',
